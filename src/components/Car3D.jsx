@@ -57,13 +57,16 @@ export default function Car3D({ onLoaded }) {
         let wheels = [];
         let bodyMtls = [];
 
+        const rawBase = import.meta.env.BASE_URL || './';
+        const baseUrl = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+
         const loader = new GLTFLoader();
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath('/draco/');
+        dracoLoader.setDecoderPath(`${baseUrl}draco/`);
         loader.setDRACOLoader(dracoLoader);
 
         loader.load(
-            '/models/car.glb?v=2',
+            `${baseUrl}models/car.glb?v=2`,
             (gltf) => {
                 const model = gltf.scene;
 
