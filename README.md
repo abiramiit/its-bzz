@@ -1,45 +1,68 @@
-# Scroll-Driven Hero Section Animation
+# ITZ FIZZ — Scroll-Driven Automotive Hero Experience
 
-A modern, cinematic frontend experience showcasing high-performance scroll-driven animations using React, GSAP, and Tailwind CSS. The main visual transforms directly based on the user's scroll position, providing an interactive and highly premium product-style feel.
+[![Live Demo](https://img.shields.io/badge/Demo-Live%20on%20GitHub%20Pages-brightgreen)](https://abiramiit.github.io/its-bzz/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/abiramiit/its-bzz)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Three.js](https://img.shields.io/badge/Three.js-r169-black?logo=threedotjs)](https://threejs.org/)
+[![GSAP](https://img.shields.io/badge/GSAP-3.15-88CE02?logo=greensock&logoColor=black)](https://greensock.com/)
+[![Lenis](https://img.shields.io/badge/Lenis-Smooth%20Scroll-black)](https://lenis.darkroom.engineering/)
 
-## Overview
-This project strictly follows best practices for frontend animations:
-- Animations are based on standard CSS `transform` (scale, rotate, translate) for layout stability and 60FPS performance.
-- The `Hero` section is pinned natively with GSAP ScrollTrigger to ensure a continuous and smooth scroll-linked aesthetic that scrubs both forwards and backwards instantly without jitter.
-- The UI contains premium micro-interactions and dark, cinematic typography designed to mimic modern tech firm assignments.
+A modern, cinematic frontend experience showcasing high-performance scroll-driven animations using React, Three.js, GSAP ScrollTrigger, Lenis smooth scrolling, and Tailwind CSS. The 3D vehicle transforms directly based on user scroll position with an expanding tarmac trail and progressive content reveals.
 
-## Features
-- **GSAP ScrollTrigger**: True scroll scrubbing for fluid visual translation (no simple time-delayed autoplay animations).
-- **Responsive Layout**: Designed for seamless degradation across Desktop, Tablet, and Mobile sizing.
-- **Performant CSS**: Uses `@tailwindcss/vite` v4 alongside carefully scoped raw CSS for specific micro-effects like background noise or custom keyframe rings.
-- **Accessibility**: Smooth semantic React scaffolding (supports future `prefers-reduced-motion` wrapping implementations).
+---
 
-## Tech Stack
-- React.js (Vite)
-- GSAP & ScrollTrigger (Animation Layer)
-- Tailwind CSS (Styling Utility)
-- JavaScript
+## 🚀 Live Demo & Links
+- **Live Demo**: [https://abiramiit.github.io/its-bzz/](https://abiramiit.github.io/its-bzz/)
+- **Repository**: [https://github.com/abiramiit/its-bzz](https://github.com/abiramiit/its-bzz)
+- **Assignment Report**: [ASSIGNMENT_SUBMISSION.md](./ASSIGNMENT_SUBMISSION.md)
 
-## Animation Approach
-- **Initial Load Timeline**: Configurable initial load via `gsap.timeline` that targets component refs with stagger parameters, ensuring elements enter synchronously when mounting is completed.
-- **Scroll Sequence Timeline**: Uses `gsap.context(...)` for React 18 strict mode safety. Attached to `heroWrapperRef` enabling a `.pin()` setup across 2500px of scrolling while calculating dynamic `.to()` progress for opacity, scale, and rotations seamlessly.
+---
 
+## ✨ Features
+- **Realistic 3D Ferrari**: Rendered in Three.js with Draco WebAssembly decompression and physical wheel rotation.
+- **Pinned Horizontal Drive**: Pinned GSAP ScrollTrigger container across 2500px of scrolling for fine-grained control.
+- **Dynamic Green Trail**: Light green (`#45db7d`) tarmac trail synchronized in lockstep behind the car.
+- **Letter-by-Letter Reveal**: Progressive headline reveal as the vehicle moves across character positions.
+- **Glassmorphic Metric Cards**: 4 statistics cards that trigger progressively during scroll progression.
+- **Lenis Smooth Momentum**: Fluid inertial scrolling linked to GSAP's high-precision ticker with zero layout reflows.
+- **Web Audio Engine Synthesizer**: Procedural engine audio synthesis responding dynamically to vehicle speed.
+- **Bidirectional Scrubbing**: Instant reverse playback when scrolling upward.
 
-## Local Setup
+---
 
-To quickly serve locally matching production configurations, run the following:
+## 🛠️ Tech Stack
+- **Framework**: React 18 (Vite)
+- **3D Engine**: Three.js + DRACOLoader
+- **Animation**: GSAP (ScrollTrigger & ScrollToPlugin)
+- **Smooth Scrolling**: Lenis
+- **Styling**: Tailwind CSS & Vanilla CSS
+- **Audio**: Web Audio API (Synthesizer Engine)
+- **Deployment**: GitHub Pages (via GitHub Actions / `gh-pages`)
+
+---
+
+## 💻 Local Setup
+
 ```bash
+# 1. Clone the repository
+git clone https://github.com/abiramiit/its-bzz.git
+cd its-bzz
+
+# 2. Install dependencies
 npm install
+
+# 3. Start development server
 npm run dev
 ```
 
-## Production Build
+---
 
-To build the static distribution folder, run:
+## 📦 Production Build & Deploy
+
 ```bash
+# Build production bundle
 npm run build
-```
 
-## Deployment
-Automated via GitHub Actions.
-Any merge into `main` executes `.github/workflows/deploy.yml`. Vite builds the distribution output relatively (`base: './'`) avoiding broken repository path URLs, followed by automatic commit extraction into GitHub Pages `gh-pages` logic.
+# Deploy to GitHub Pages
+npm run deploy
+```
